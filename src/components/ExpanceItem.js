@@ -1,17 +1,13 @@
 // components in react is just a js function//
 import "./ExpanceItem.css";
-function ExpenseItem() {
-  const date = new Date(2021, 3, 22).toString();
-  const expancetitle = "Car Insurance";
-  const price = 444;
-  const locationofexpendature = "any location when we added expance";
+function ExpenseItem(props) {
   return (
     <div className="expense-item">
-      <div>{date}</div>
+      <div>{props.date.toString()}</div>
       <div className="expense-item__description">
-        <h3>{locationofexpendature}</h3>
-        <h2>{expancetitle}</h2>
-        <div className="expense-item__price">Rs {price}</div>
+        <h3>{props.locationofexpence}</h3>
+        <h2>{props.title}</h2>
+        <div className="expense-item__price">Rs {props.amount}</div>
       </div>
     </div>
   );
