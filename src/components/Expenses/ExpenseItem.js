@@ -1,17 +1,18 @@
 // components in react is just a js function//
-import ExpanceDetails from "./ExpanceDetails";
-import ExpenceDate from "./ExpanceDate";
-import "./ExpanceItem.css";
+import ExpenseDetails from "./ExpenseDetails";
+import ExpenceDate from "./ExpenseDate";
+import "./ExpenseItem.css";
+import Card from "../UI/Card";
 function ExpenseItem(props) {
   return (
-    <div className="expense-item">
+    <Card className="expense-item">
       <ExpenceDate date={props.date} />
-      <ExpanceDetails
+      <ExpenseDetails
         amount={props.amount}
         locationofexpence={props.locationofexpence}
         title={props.title}
       />
-    </div>
+    </Card>
   );
 }
 export default ExpenseItem;

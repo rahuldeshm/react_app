@@ -1,6 +1,6 @@
-import "./ExpanceItem.css";
+import "./ExpenseItem.css";
 
-function ExpanceDetails(props) {
+function ExpenseDetails(props) {
   return (
     <div className="expense-item__description">
       <h3>{props.locationofexpence}</h3>
@@ -10,4 +10,4 @@ function ExpanceDetails(props) {
   );
 }
 
-export default ExpanceDetails;
+export default ExpenseDetails;
