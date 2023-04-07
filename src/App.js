@@ -1,4 +1,5 @@
 // import React, { createElement } from "react";
+import React from "react";
 import Expenses from "./components/Expenses/Expenses";
 
 function App() {
