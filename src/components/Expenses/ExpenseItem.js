@@ -1,26 +1,32 @@
 // components in react is just a js function//
-import React from "react";
+import React, { useState } from "react";
 import ExpenseDetails from "./ExpenseDetails";
 import ExpenceDate from "./ExpenseDate";
 import "./ExpenseItem.css";
 import Card from "../UI/Card";
 function ExpenseItem(props) {
+  const [title, setTitle] = useState(props.title);
+  const [amount, increseAmount] = useState(props.amount);
+
   function btnHandler() {
-    console.log("btn Clicked ....!");
+    setTitle("New title Value");
+    console.log(title);
   }
-  function deleteBtnHandler() {
-    console.log("Delete btn Clicked ....!");
+  function editBtnHandler() {
+    increseAmount(amount + 100);
+    console.log(amount);
   }
+
   return (
     <Card className="expense-item">
       <ExpenceDate date={props.date} />
       <ExpenseDetails
-        amount={props.amount}
+        amount={amount}
         locationofexpence={props.locationofexpence}
-        title={props.title}
+        title={title}
       />
       <button onClick={btnHandler}>Change title</button>
-      <button onClick={deleteBtnHandler}>delete expense</button>
+      <button onClick={editBtnHandler}>increase Expense amount</button>
     </Card>
   );
 }
