@@ -1,7 +1,8 @@
 // import React, { createElement } from "react";
 import React from "react";
-import ExpenseForm from "./components/Expenses/ExpenseForm";
+// import NewEx
 import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
   // we can work like this also in react but it is little complicated so we use jsx .//
@@ -14,9 +15,8 @@ function App() {
   // );
   return (
     <div>
-      <h2>Let's get started</h2>
-      <ExpenseForm></ExpenseForm>
-      <Expenses></Expenses>
+      <NewExpense />
+      <Expenses />
     </div>
   );
 }

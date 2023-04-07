@@ -10,14 +10,14 @@ function ExpenseItem(props) {
 
   function btnHandler() {
     setTitle("New title Value");
-    console.log(title);
+    // console.log(title);
   }
   function editBtnHandler() {
     increseAmount(amount + 100);
-    console.log(amount);
+    // console.log(amount);
   }
-  console.log(amount);
-  console.log(title);
+  // console.log(amount);
+  // console.log(title);
   return (
     <Card className="expense-item">
       <ExpenceDate date={props.date} />
