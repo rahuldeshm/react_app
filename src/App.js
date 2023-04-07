@@ -1,5 +1,6 @@
 // import React, { createElement } from "react";
 import React from "react";
+import ExpenseForm from "./components/Expenses/ExpenseForm";
 import Expenses from "./components/Expenses/Expenses";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
   return (
     <div>
       <h2>Let's get started</h2>
+      <ExpenseForm></ExpenseForm>
       <Expenses></Expenses>
     </div>
   );

@@ -16,7 +16,8 @@ function ExpenseItem(props) {
     increseAmount(amount + 100);
     console.log(amount);
   }
-
+  console.log(amount);
+  console.log(title);
   return (
     <Card className="expense-item">
       <ExpenceDate date={props.date} />
