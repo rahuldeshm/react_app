@@ -3,10 +3,17 @@ import Card from "../UI/Card";
 import ExpenseForm from "./ExpenseForm";
 import "./NewExpense.css";
 
-function NewExpense() {
+function NewExpense(props) {
+  function saveExpenseData(obj) {
+    const newObj = {
+      ...obj,
+      id: Math.random().toString(),
+    };
+    props.onAddData(newObj);
+  }
   return (
     <Card className="new-expense">
-      <ExpenseForm></ExpenseForm>
+      <ExpenseForm onSubmitData={saveExpenseData}></ExpenseForm>
     </Card>
   );
 }
