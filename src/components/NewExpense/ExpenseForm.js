@@ -8,19 +8,40 @@ function ExpenseForm() {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
+  // const [userInput, setUserInput] = useState({
+  //   enteredTitle: "",
+  //   enteredAmount: "",
+  //   enteredDate: "",
+  // });
   function titleChangeHandler(e) {
     e.preventDefault();
     setEnteredTitle(e.target.value);
+    // setUserInput((preInput) => {
+    //   return { ...preInput, enteredTitle: e.target.value };
+    // });
+    // setUserInput({ ...userInput, enteredTitle: e.target.value });
   }
   function dateChangeHandler(e) {
     e.preventDefault();
     setEnteredDate(e.target.value);
+    // setUserInput({ ...userInput, enteredDate: e.target.value });
   }
   function amountChangeHandler(e) {
     e.preventDefault();
     setEnteredAmount(e.target.value);
+    // setUserInput({ ...userInput, enteredAmount: e.target.value });
+  }
+  function formSubmiHandler(e) {
+    e.preventDefault();
+    const obj = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: enteredDate,
+    };
+    console.log(obj);
   }
   // console.log(enteredTitle);
+  // console.log(userInput);
   return (
     <form className="new-expense__controls">
       <div className="new-expense__controls">
@@ -42,7 +63,9 @@ function ExpenseForm() {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="submit">Add Expense</button>
+        <button onClick={formSubmiHandler} type="submit">
+          Add Expense
+        </button>
       </div>
     </form>
   );
