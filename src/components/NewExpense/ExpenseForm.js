@@ -5,25 +5,40 @@ import "./ExpenseForm.css";
 import Expenses from "../Expenses/Expenses";
 
 function ExpenseForm() {
-  function consoleEle(e) {
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
+  function titleChangeHandler(e) {
     e.preventDefault();
-    console.log(e.target.value);
+    setEnteredTitle(e.target.value);
   }
+  function dateChangeHandler(e) {
+    e.preventDefault();
+    setEnteredDate(e.target.value);
+  }
+  function amountChangeHandler(e) {
+    e.preventDefault();
+    setEnteredAmount(e.target.value);
+  }
+  // console.log(enteredTitle);
   return (
-    <form onChange={consoleEle} className="new-expense__controls">
+    <form className="new-expense__controls">
       <div className="new-expense__controls">
         <div className="new-expense__control">
+          <label>Expense Title</label>
           <input
             type="text"
-            placeholder="Expense Title"
+            onChange={titleChangeHandler}
             className="new-expense__control"
           />
         </div>
         <div className="new-expense__control">
-          <input type="number" placeholder="Expense Amount" />
+          <label>Expense Amount</label>
+          <input type="number" onChange={amountChangeHandler} />
         </div>
         <div className="new-expense__control">
-          <input type="date"></input>
+          <label>Date</label>
+          <input type="date" onChange={dateChangeHandler} />
         </div>
       </div>
       <div className="new-expense__actions">
