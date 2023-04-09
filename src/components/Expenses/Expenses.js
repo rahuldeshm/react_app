@@ -7,9 +7,10 @@ function Expenses(props) {
   // allexpence.push(props.newExpense);
   return (
     <Card className="expenses">
-      {props.allExpense.map((e) => {
+      {props.allExpenses.map((e) => {
         return (
           <ExpenseItem
+            key={e.id}
             title={e.title}
             amount={e.amount}
             date={e.date}

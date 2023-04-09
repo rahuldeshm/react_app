@@ -5,8 +5,6 @@ import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
 
 function App() {
-  const [obj, setEnteredObj] = useState("");
-
   // we can work like this also in react but it is little complicated so we use jsx .//
 
   // return React.createElement(
@@ -15,7 +13,7 @@ function App() {
   //   React.createElement("h2", {}, "Let's Get Started"),
   //   createElement(Expenses)
   // );
-  let allExpense = [
+  var defaultExpenses = [
     {
       id: "e1",
       title: "Toilet Paper",
@@ -45,14 +43,15 @@ function App() {
       locationofexpence: "at cloth shop",
     },
   ];
+  var [allExpense, addNewExpense] = useState(defaultExpenses);
   function addDataHandler(objre) {
-    console.log("in app js", objre);
-    allExpense.push(objre);
+    // console.log("in app js", objre);
+    addNewExpense([...allExpense, objre]);
   }
   return (
     <div>
       <NewExpense onAddData={addDataHandler} />
-      <Expenses allExpense={allExpense} />
+      <Expenses allExpenses={allExpense} />
     </div>
   );
 }
