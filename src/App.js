@@ -8,14 +8,14 @@ const defaultExpenses = [
     id: "e1",
     title: "Toilet Paper",
     amount: 444,
-    date: new Date(2020, 3, 23),
+    date: new Date(2019, 3, 23),
     locationofexpence: "at home",
   },
   {
     id: "e2",
     title: "Car Insurance",
-    amount: 4325,
-    date: new Date(2020, 4, 23),
+    amount: 425,
+    date: new Date(2021, 4, 23),
     locationofexpence: "at garage",
   },
   {
@@ -28,7 +28,7 @@ const defaultExpenses = [
   {
     id: "e4",
     title: "cloths",
-    amount: 3233,
+    amount: 233,
     date: new Date(2020, 7, 23),
     locationofexpence: "at cloth shop",
   },
