@@ -2,12 +2,12 @@ import React, { useState } from "react";
 
 // import "../Expenses/ExpenseItem.css";
 import "./ExpenseForm.css";
-import Expenses from "../Expenses/Expenses";
 
 function ExpenseForm(props) {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
+  const [statev, setNewState] = useState("addForm");
   // const [userInput, setUserInput] = useState({
   //   enteredTitle: "",
   //   enteredAmount: "",
@@ -44,9 +44,17 @@ function ExpenseForm(props) {
     setEnteredDate("");
     setEnteredTitle("");
   }
+  function addFormHandler() {
+    setNewState("formAdded");
+  }
+  function cancelFormHandler() {
+    setNewState("addForm");
+  }
   // console.log(enteredTitle);
   // console.log(userInput);
-  return (
+  return statev === "addForm" ? (
+    <button onClick={addFormHandler}>Add Expense</button>
+  ) : (
     <form className="new-expense__controls">
       <div className="new-expense__controls">
         <div className="new-expense__control">
@@ -81,6 +89,7 @@ function ExpenseForm(props) {
         <button onClick={formSubmiHandler} type="submit">
           Add Expense
         </button>
+        <button onClick={cancelFormHandler}>Cancel</button>
       </div>
     </form>
   );
